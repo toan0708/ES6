@@ -29,12 +29,8 @@
 
   function createTable(data) {
     const tableBody = document.getElementById('table-body');
-    let count = 1; // Biến đếm
-
-    // Clear existing data
+    let count = 1;
     tableBody.innerHTML = '';
-
-    // Iterate through the data and create table rows
     data.forEach(item => {
       const row = document.createElement('tr');
       row.innerHTML = `
