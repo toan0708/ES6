@@ -15,14 +15,14 @@ function fetchData() {
         .catch(error => console.error('Error fetching data:', error));
 }
 
-// Function to populate table with data
+
 function populateTable(users) {
     var tableBody = document.querySelector('#userData tbody');
 
-    // Clear existing rows
+
     tableBody.innerHTML = '';
 
-    // Iterate through each user and add a row to the table
+
     users.forEach(function (user) {
         var row = tableBody.insertRow();
         var idCell = row.insertCell(0);
@@ -37,5 +37,5 @@ function populateTable(users) {
     });
 }
 
-// Call the function to fetch data and populate the table
+
 fetchData();
