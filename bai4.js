@@ -1,50 +1,18 @@
-
- 
-    fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
-    .then(function(response){
-      response.json().then(function(data){
-        console.log(data);
-      })
-    })
-    .catch(function(error){
-      console.log(error);
-    })
-
-    document.addEventListener('DOMContentLoaded', () => {
-  const apiUrl = 'https://datausa.io/api/data?drilldowns=Nation&measures=Population';
-
-  fetch(apiUrl)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      createTable(data.data);
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-
-  function createTable(data) {
-    const tableBody = document.getElementById('table-body');
-    let count = 1;
-    tableBody.innerHTML = '';
-    data.forEach(item => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${count++}</td>
-        <td>${item.Nation}</td>
-        <td>${item.Year}</td>
-        <td>${item.Population}</td>
-      `;
-      tableBody.appendChild(row);
-    });
-  }
-});
+function spreadOut() {
+    let fragment = ['to', 'code'];
+    let sentence = ['learning', ...fragment, 'is', 'fun'];
+    return sentence;
+}
+console.log(spreadOut());
 
 
+    
 
-
-
+// var li = (obj) => `<li><a href="${obj.url}">${obj.label}</a></li>`;
+// var ul = (arr) => `<ul>${arr.map((obj) => li(obj)).join('\n')}</ul>`;
+// var arr = [
+//     { url: "http://www.twitter.com", label: "Twitter" },
+//     { url: "http://www.linkedin.com", label: "Linked In" },
+//     { url: "http://www.facebook.com", label: "Facebook" }
+// ];
+// document.getElementById('list').innerHTML = ul(arr);
